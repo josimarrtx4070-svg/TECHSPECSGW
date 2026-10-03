@@ -1,0 +1,6 @@
+*.py
+data.js.backup
+data_backup.js
+_backup_pre_fix/
+_check_report.txt
+_idcheck.txt

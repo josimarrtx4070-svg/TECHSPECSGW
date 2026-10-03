@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Especificações de GPU</title>
+<meta name="description" content="Especificações técnicas de GPUs desktop e laptop de 2015 a 2027. Filtros por ano e pesquisa ao vivo.">
+<meta property="og:title" content="Especificações de GPU">
+<meta property="og:description" content="Especificações técnicas de GPUs com filtros por ano e pesquisa ao vivo.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://techspecsgw.pt/gpus.html">
+<link rel="canonical" href="https://techspecsgw.pt/gpus.html">
+<meta property="og:image" content="https://techspecsgw.pt/favicon.png">
+<link rel="stylesheet" href="style-startup.css">
+<link rel="icon" href="favicon.png">
+<link rel="manifest" href="manifest.json">
+</head>
+<body>
+<div id="header-placeholder"></div>
+
+<main class="container">
+<section id="gpus">
+<h2>GPUs</h2>
+<p class="tagline">Lançamentos 2015-2027</p>
+<div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px;">
+<select id="filter-year-gpus" class="search" style="max-width:180px;">
+<option value="">Todos os anos</option>
+<option value="2015">2015</option>
+<option value="2016">2016</option>
+<option value="2017">2017</option>
+<option value="2018">2018</option>
+<option value="2019">2019</option>
+<option value="2020">2020</option>
+<option value="2021">2021</option>
+<option value="2022">2022</option>
+<option value="2023">2023</option>
+<option value="2024">2024</option>
+<option value="2025">2025</option>
+<option value="2026">2026</option>
+<option value="2027">2027</option>
+</select>
+<input type="search" id="search-gpus" class="search" placeholder="Pesquisar GPUs..." style="flex:1;">
+</div>
+<div class="result-count" style="color:var(--muted);font-size:.85rem;margin-bottom:8px;"></div>
+<div id="gpus-grid" class="grid"></div>
+</section>
+
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+<script src="fx.js"></script>
+</body>
+</html>
