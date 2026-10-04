@@ -1,0 +1,4 @@
+cpus: count=1240 unique_ids=1240 dup_ids=[]
+gpus: count=282 unique_ids=282 dup_ids=[]
+smartphones: count=67 unique_ids=1 dup_ids=[None]
+consoles: count=11 unique_ids=1 dup_ids=[None]
