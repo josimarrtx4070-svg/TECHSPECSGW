@@ -1,0 +1,6 @@
+comparadores.html  refs=17  broken=[]
+console-portateis.html  refs=15  broken=[]
+cpus.html  refs=15  broken=[]
+gpus.html  refs=15  broken=[]
+index.html  refs=31  broken=[]
+smartphones.html  refs=15  broken=[]

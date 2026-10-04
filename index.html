@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Especificações de Smartphones, Consoles Portáteis, CPU e GPU</title>
+<meta name="description" content="TechSpecsGW: especificações técnicas de smartphones, consoles portáteis, CPUs e GPUs com comparador integrado e secção de Rumores. Dados ilustrativos para comparação rápida.">
+<meta property="og:title" content="TechSpecsGW - Especificações Técnicas">
+<meta property="og:description" content="Especificações de Smartphones, Consoles Portáteis, CPU e GPU com comparador integrado e secção de Rumores.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://techspecsgw.pt/index.html">
+<link rel="canonical" href="https://techspecsgw.pt/">
+<meta property="og:image" content="https://techspecsgw.pt/favicon.png">
+<link rel="stylesheet" href="style-startup.css">
+<link rel="icon" href="favicon.png">
+<link rel="manifest" href="manifest.json">
+
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@graph": [
+ {
+  "@type": "Organization",
+  "@id": "https://techspecsgw.pt/#org",
+  "name": "TechSpecsGW",
+  "url": "https://techspecsgw.pt/",
+  "logo": "https://techspecsgw.pt/logo_transparente.png"
+ },
+ {
+  "@type": "WebSite",
+  "@id": "https://techspecsgw.pt/#website",
+  "url": "https://techspecsgw.pt/",
+  "name": "TechSpecsGW",
+  "inLanguage": "pt-PT",
+  "publisher": {
+   "@id": "https://techspecsgw.pt/#org"
+  },
+  "potentialAction": {
+   "@type": "SearchAction",
+   "target": "https://techspecsgw.pt/smartphones.html?q={search_term_string}",
+   "query-input": "required name=search_term_string"
+  }
+ }
+]
+}
+</script>
+<style>
+body{min-height:100vh}
+header{position:sticky;top:0;z-index:100}
+#compare-tray{position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(100px);transition:transform .4s cubic-bezier(.175,.885,.32,1.275);z-index:1001}
+#compare-tray.visible{transform:translateX(-50%) translateY(0)}
+#compare-modal{position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:2000;display:none;align-items:center;justify-content:center;padding:20px}
+#compare-modal.active{display:flex}
+.close-compare{cursor:pointer}
+.search-results-dropdown{position:absolute;top:100%;left:0;right:0;background:#131c2e;border:1px solid var(--border);border-radius:10px;margin-top:8px;max-height:360px;overflow-y:auto;display:none;z-index:999}
+.search-result-item{padding:10px 14px;cursor:pointer;border-bottom:1px solid var(--border)}
+.search-result-item:hover{background:rgba(58,160,255,.08)}
+.search-result-name{font-weight:600;color:var(--text)}
+.search-result-score{color:var(--accent);margin-left:8px;font-size:.85rem}
+.search-result-category{color:var(--muted);font-size:.8rem}
+@media(max-width:600px){header .container{flex-direction:column;align-items:flex-start;gap:12px}nav{flex-wrap:wrap;width:100%}header .search-wrapper{width:100%}}
+</style>
+</head>
+<body>
+<div id="header-placeholder"></div>
+
+<main class="container">
+<section id="lancamentos">
+<h2 class="animate-fade-in">Lançamentos Recentes</h2>
+<div class="featured-grid animate-fade-in" id="featured-grid">
+</div>
+</section>
+
+<section id="smartphones">
+<h2 class="animate-fade-in">Smartphones</h2>
+<div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px;">
+<select id="filter-year-smartphones" class="search" style="max-width:180px;">
+<option value="">Todos os anos</option>
+<option value="2015">2015</option>
+<option value="2016">2016</option>
+<option value="2017">2017</option>
+<option value="2018">2018</option>
+<option value="2019">2019</option>
+<option value="2020">2020</option>
+<option value="2021">2021</option>
+<option value="2022">2022</option>
+<option value="2023">2023</option>
+<option value="2024">2024</option>
+<option value="2025">2025</option>
+<option value="2026">2026</option>
+<option value="2027">2027</option>
+</select>
+<input type="search" id="search-smartphones" class="search" placeholder="Pesquisar smartphones..." style="flex:1;">
+</div>
+<div class="result-count" style="color:var(--muted);font-size:.85rem;margin-bottom:8px;"></div>
+<div id="smartphones-grid" class="grid"></div>
+</section>
+
+<section id="rumores">
+<h2 class="animate-fade-in">Rumores</h2>
+<div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px;">
+<select id="filter-year-rumores" class="search" style="max-width:180px;">
+<option value="">Todos os anos</option>
+<option value="2015">2015</option>
+<option value="2016">2016</option>
+<option value="2017">2017</option>
+<option value="2018">2018</option>
+<option value="2019">2019</option>
+<option value="2020">2020</option>
+<option value="2021">2021</option>
+<option value="2022">2022</option>
+<option value="2023">2023</option>
+<option value="2024">2024</option>
+<option value="2025">2025</option>
+<option value="2026">2026</option>
+<option value="2027">2027</option>
+</select>
+<input type="search" id="search-rumores" class="search" placeholder="Pesquisar rumores..." style="flex:1;">
+</div>
+<div class="result-count" style="color:var(--muted);font-size:.85rem;margin-bottom:8px;"></div>
+<div id="rumores-grid" class="grid"></div>
+</section>
+
+<section id="consoles">
+<h2 class="animate-fade-in">Consoles Portáteis</h2>
+<div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px;">
+<select id="filter-year-consoles" class="search" style="max-width:180px;">
+<option value="">Todos os anos</option>
+<option value="2015">2015</option>
+<option value="2016">2016</option>
+<option value="2017">2017</option>
+<option value="2018">2018</option>
+<option value="2019">2019</option>
+<option value="2020">2020</option>
+<option value="2021">2021</option>
+<option value="2022">2022</option>
+<option value="2023">2023</option>
+<option value="2024">2024</option>
+<option value="2025">2025</option>
+<option value="2026">2026</option>
+<option value="2027">2027</option>
+</select>
+<input type="search" id="search-consoles" class="search" placeholder="Pesquisar consoles..." style="flex:1;">
+</div>
+<div class="result-count" style="color:var(--muted);font-size:.85rem;margin-bottom:8px;"></div>
+<div id="consoles-grid" class="grid"></div>
+</section>
+
+<section id="cpus">
+<h2 class="animate-fade-in">CPUs</h2>
+<div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px;">
+<select id="filter-year-cpus" class="search" style="max-width:180px;">
+<option value="">Todos os anos</option>
+<option value="2015">2015</option>
+<option value="2016">2016</option>
+<option value="2017">2017</option>
+<option value="2018">2018</option>
+<option value="2019">2019</option>
+<option value="2020">2020</option>
+<option value="2021">2021</option>
+<option value="2022">2022</option>
+<option value="2023">2023</option>
+<option value="2024">2024</option>
+<option value="2025">2025</option>
+<option value="2026">2026</option>
+<option value="2027">2027</option>
+</select>
+<input type="search" id="search-cpus" class="search" placeholder="Pesquisar CPUs..." style="flex:1;">
+</div>
+<div class="result-count" style="color:var(--muted);font-size:.85rem;margin-bottom:8px;"></div>
+<div id="cpus-grid" class="grid"></div>
+</section>
+
+<section id="gpus">
+<h2 class="animate-fade-in">GPUs</h2>
+<div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px;">
+<select id="filter-year-gpus" class="search" style="max-width:180px;">
+<option value="">Todos os anos</option>
+<option value="2015">2015</option>
+<option value="2016">2016</option>
+<option value="2017">2017</option>
+<option value="2018">2018</option>
+<option value="2019">2019</option>
+<option value="2020">2020</option>
+<option value="2021">2021</option>
+<option value="2022">2022</option>
+<option value="2023">2023</option>
+<option value="2024">2024</option>
+<option value="2025">2025</option>
+<option value="2026">2026</option>
+<option value="2027">2027</option>
+</select>
+<input type="search" id="search-gpus" class="search" placeholder="Pesquisar GPUs..." style="flex:1;">
+</div>
+<div class="result-count" style="color:var(--muted);font-size:.85rem;margin-bottom:8px;"></div>
+<div id="gpus-grid" class="grid"></div>
+</section>
+
+<section id="temas">
+<h2 class="animate-fade-in">Temas</h2>
+<div style="display:flex;gap:12px;flex-wrap:wrap;">
+<a href="#" id="theme-startup" class="btn-theme" style="padding:10px 20px;border-radius:10px;border:2px solid var(--border);background:var(--card);color:var(--text);text-decoration:none;font-weight:600;cursor:pointer;">Startup</a>
+<a href="#" id="theme-glass" class="btn-theme" style="padding:10px 20px;border-radius:10px;border:2px solid var(--border);background:var(--card);color:var(--text);text-decoration:none;font-weight:600;cursor:pointer;">Glass</a>
+<a href="#" id="theme-minimal" class="btn-theme" style="padding:10px 20px;border-radius:10px;border:2px solid var(--border);background:var(--card);color:var(--text);text-decoration:none;font-weight:600;cursor:pointer;">Minimal</a>
+<a href="#" id="theme-neon" class="btn-theme" style="padding:10px 20px;border-radius:10px;border:2px solid var(--border);background:var(--card);color:var(--text);text-decoration:none;font-weight:600;cursor:pointer;">Neon</a>
+</div>
+</section>
+
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+<script src="fx.js"></script>
+</body>
+</html>

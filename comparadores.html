@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Especificações de CPU e GPU — Comparador</title>
+<meta name="description" content="Compare CPUs e GPUs lado a lado. Destaque automático para valores superiores.">
+<meta property="og:title" content="Especificações de CPU e GPU — Comparador">
+<meta property="og:description" content="Comparador de CPUs e GPUs com destaque para valores superiores.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://techspecsgw.pt/comparadores.html">
+<link rel="canonical" href="https://techspecsgw.pt/comparadores.html">
+<meta property="og:image" content="https://techspecsgw.pt/favicon.png">
+<link rel="stylesheet" href="style-startup.css">
+<link rel="icon" href="favicon.png">
+<link rel="manifest" href="manifest.json">
+<style>
+.winner-banner{display:flex;gap:12px;align-items:center;padding:14px 16px;border-radius:14px;margin-bottom:12px;border:1px solid var(--border);background:rgba(103,232,249,.07)}
+.winner-trophy{font-size:1.6rem;line-height:1}
+.winner-banner strong{display:block;font-size:1.05rem}
+.winner-banner span{color:var(--muted);font-size:.85rem}
+</style>
+</head>
+<body>
+<div id="header-placeholder"></div>
+
+<main class="container">
+<section id="comparadores">
+<h2 class="animate-fade-in">Comparadores</h2>
+<p class="tagline">Compare CPUs e GPUs lado a lado com destaque para valores superiores e vencedor final.</p>
+</section>
+
+<div class="comparador-container">
+<div class="comparador-box">
+<img class="comparador-banner" src="CPU VS CPU.png" alt="Comparador de CPUs" loading="lazy">
+<h3 class="animate-fade-in">Comparar CPUs</h3>
+<div class="select-row">
+<select id="cpu1"></select>
+<select id="cpu2"></select>
+</div>
+<button id="compareCpuBtn" class="animate-fade-in">Comparar</button>
+<div id="cpuCompareResult" class="result"></div>
+</div>
+<div class="comparador-box">
+<img class="comparador-banner" src="GPU VS GPU.png" alt="Comparador de GPUs" loading="lazy">
+<h3 class="animate-fade-in">Comparar GPUs</h3>
+<div class="select-row">
+<select id="gpu1"></select>
+<select id="gpu2"></select>
+</div>
+<button id="compareGpuBtn" class="animate-fade-in">Comparar</button>
+<div id="gpuCompareResult" class="result"></div>
+</div>
+</div>
+
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+<script src="fx.js"></script>
+</body>
+</html>

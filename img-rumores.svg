@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-label="Rumores">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#1e293b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <circle cx="540" cy="315" r="150" fill="none" stroke="#38bdf8" stroke-width="26"/>
+  <line x1="648" y1="423" x2="790" y2="565" stroke="#38bdf8" stroke-width="44" stroke-linecap="round"/>
+  <text x="540" y="372" font-family="Segoe UI, Arial, sans-serif" font-size="170" font-weight="700" fill="#e2e8f0" text-anchor="middle">?</text>
+</svg>
